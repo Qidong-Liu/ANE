@@ -23,7 +23,7 @@ The code has been tested under Python 3.7.5, with the following packages install
 - **utils.py:** Codes to load data and split data.
 ## Data
 
-(1) TriGAN expect an edgelist for the input network, i.e.,
+(1) ANE expect an edgelist for the input network, i.e.,
 >node1 node2 1
 
 >node1 node3 1
@@ -67,14 +67,16 @@ where N denotes the number of nodes and d denotes the embeddings' dimension. Eac
 
 ## Basic usage
 ### Classification
-We take the Citeseer dataset as an exampleand show how to perform classification tasks for TriGAN:
+We take the Citeseer dataset as an exampleand show how to perform classification tasks for ANE:
 
 (1) Modify the following parameters in settings.py:
 >TRAIN_INPUT_FILENAME = '/data/Citeseer_input.txt'
 
 >TRAIN_LABEL_FILENAME ='/data/Citeseer_label.txt'
 
->format ='blogcat'APP = 0
+>format ='blogcat'
+
+>APP = 0
 
 (2) Run the code by:
 
@@ -83,7 +85,7 @@ We take the Citeseer dataset as an exampleand show how to perform classification
 (3) The learned embeddings will be stored in /emb/, and the evaluation results (micro F1 and macro F1) for embeddings will be printed on the screen for each epoch.
 
 ### Link Prediction
-We take the wiki-vote dataset as an exampleand show how to perform link prediction tasks for TriGAN:
+We take the wiki-vote dataset as an exampleand show how to perform link prediction tasks for ANE:
 
 (1) If you have split the dataset, please move directly to step 2. Otherwise, modify the following parameters in settings.py:
 >APP = 1
